@@ -68,7 +68,6 @@ def reformat_languages(languages)
     else
       new_hash[language_name] = language_info
       new_hash[language_name][:style] = [style]
-      puts language_info
 
     end
 
