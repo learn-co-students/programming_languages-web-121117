@@ -63,12 +63,16 @@ def reformat_languages(languages)
   new_hash = {}
   languages.each do |style, language|
     language.each do |language_name, language_info|
-    new_hash[language_name] = language_info
-    new_hash[language_name][:style] = [style]
-    if new_hash[language_name]==language_name
-      new_hash[language_name][:style].push[style]
+    if new_hash.key?(language_name)
+      new_hash[language_name][:style] << style
+    else
+      new_hash[language_name] = language_info
+      new_hash[language_name][:style] = [style]
+      puts language_info
+
     end
-    end
+
+  end
   end
   return new_hash
 end
